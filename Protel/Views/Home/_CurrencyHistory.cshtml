@@ -1,0 +1,26 @@
+﻿@model List<HistoryViewModel>
+
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Sell</th>
+                <th scope="col">Buy</th>
+                <th scope="col">CreatedDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.Code</th>
+                    <td> @item.Sell</td>
+                    <td>@item.Buy</td>
+                    <td>@item.CreatedDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

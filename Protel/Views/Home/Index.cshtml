@@ -1,0 +1,37 @@
+﻿@model List<CodeRateViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Canlı Döviz </h1>
+</div>
+<div class="row my-3">
+    <a class="btn btn-sm col-2" href="/?sortField=Code&sortType=ASC">Code ASC</a>
+    <a class="btn btn-sm col-2" href="/?sortField=Code&sortType=DESC">Code DESC</a>
+
+    <a class="btn btn-sm col-2" href="/?sortField=SELL&sortType=ASC">Sell ASC</a>
+    <a class="btn btn-sm col-2" href="/?sortField=SELL&sortType=DESC">Sell DESC</a>
+
+    <a class="btn btn-sm col-2" href="/?sortField=BUY&sortType=ASC">Buy ASC</a>
+    <a class="btn btn-sm col-2" href="/?sortField=BUY&sortType=DESC">Buy DESC</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Sell</th>
+            <th scope="col">Buy</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Code</th>
+                <td> @item.Sell</td>
+                <td>@item.Buy</td>
+            </tr>
+        }
+    </tbody>
+</table>
